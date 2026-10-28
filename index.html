@@ -3,69 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Dynamique</title>
+    <title>AeroTrack - Tableau de Bord Aviation</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Intégration de FontAwesome pour des icônes modernes -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <!-- Barre de Navigation -->
+    <!-- بار التنقل -->
     <nav class="navbar">
-        <div class="logo">Dev<span>Oussama</span></div>
+        <div class="logo"><i class="fas fa-plane-departure"></i> Aero<span>Track</span></div>
         <ul class="nav-links">
             <li><a href="#home">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#flights-section">Suivi des Vols (API)</a></li>
         </ul>
     </nav>
 
-    <!-- Section Principale / Accueil -->
-    <header id="home" class="hero-section">
+    <!-- واجهة الموقع -->
+    <header id="home" class="hero">
         <div class="hero-content">
-            <h1>Des Sites Web <span>Modernes & Réactifs</span></h1>
-            <p>Conception d'interfaces utilisateurs attrayantes et intégration d'API performantes.</p>
-            <a href="#contact" class="btn">Me Contacter</a>
+            <h1>Interface Dynamique pour le <span>Secteur de l'Aviation</span></h1>
+            <p>Suivi des vols en temps réel et intégration d'API aéronautiques avancées.</p>
+            <a href="#flights-section" class="btn"><i class="fas fa-search"></i> Afficher les Vols en Direct</a>
         </div>
     </header>
 
-    <!-- Section Services / Projets -->
-    <section id="services" class="services-section">
-        <h2>Mes Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-code icon"></i>
-                <h3>Développement Frontend</h3>
-                <p>Création d'interfaces fluides et réactives avec HTML, CSS et JavaScript.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-cloud-upload-alt icon"></i>
-                <h3>Intégration d'API</h3>
-                <p>Connexion et synchronisation de services externes et de modules d'IA dynamiques.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-mobile-alt icon"></i>
-                <h3>Design Responsive</h3>
-                <p>Optimisation complète pour un affichage parfait sur smartphones, tablettes et PC.</p>
-            </div>
+    <!-- قسم الطيران وجلب بيانات الـ API -->
+    <section id="flights-section" class="dynamic-section">
+        <h2><i class="fas fa-broadcast-tower"></i> Tableau des Vols (Données API)</h2>
+        <p class="subtitle">Simulation de requêtes asynchrones vers une API de trafic aérien mondial.</p>
+        
+        <button id="load-flights-btn" class="btn-api">
+            <i class="fas fa-sync-alt"></i> Actualiser les données de vol
+        </button>
+
+        <!-- Spinner للتحميل -->
+        <div id="loader" class="loader hidden"></div>
+
+        <!-- جدول عرض الرحلات الديناميكي -->
+        <div class="table-container hidden" id="table-container">
+            <table class="flights-table">
+                <thead>
+                    <tr>
+                        <th>N° Vol</th>
+                        <th>Compagnie</th>
+                        <th>Destination</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="flights-data-body">
+                    <!-- البيانات سيتم حقنها هنا بواسطة الجافا سكريبت -->
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact-section">
-        <h2>Discutons de votre Projet</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Votre Nom" required>
-            <input type="email" placeholder="Votre Email" required>
-            <textarea placeholder="Décrivez votre projet en quelques mots..." rows="5" required></textarea>
-            <button type="submit" class="btn">Envoyer la Proposition</button>
-        </form>
-    </section>
-
-    <!-- Pied de page -->
     <footer>
-        <p>&copy; 2026 DevOussama. Tous droits réservés.</p>
+        <p>&copy; 2026 Développé par Oussama pour le secteur Aéronautique. Tous droits réservés.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
